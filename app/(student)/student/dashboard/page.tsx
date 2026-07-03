@@ -166,7 +166,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 lg:flex">
       {/* Sidebar (renders itself as fixed aside on desktop) */}
       <StudentNav />
 
