@@ -1,6 +1,7 @@
 'use client'
 
 import type { StudentProfile, OnboardingData } from './types'
+import { COMPLETION_FIELDS } from './types'
 
 const KEY = 'cybermil_student_profiles'
 
@@ -66,7 +67,6 @@ export function updateStudentProfile(
 
 /** Returns 0–100 */
 export function getCompletionPct(profile: StudentProfile): number {
-  const { COMPLETION_FIELDS } = require('./types') as typeof import('./types')
   let earned = 30 // base 30% for completing onboarding
 
   for (const { key, weight } of COMPLETION_FIELDS) {
