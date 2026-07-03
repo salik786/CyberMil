@@ -1,26 +1,123 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Brand palette ─────────────────────────────────────────── */
+@theme {
+  /* Navy */
+  --color-navy-50:  #EEF3F8;
+  --color-navy-100: #D7E3EF;
+  --color-navy-200: #B0C7DF;
+  --color-navy-300: #82A5C8;
+  --color-navy-400: #4F7AA3;
+  --color-navy-500: #2C567F;
+  --color-navy-600: #1B3A5C;
+  --color-navy-700: #10243E;
+  --color-navy-800: #0A182B;
+  --color-navy-900: #060F1C;
+
+  /* Ochre */
+  --color-ochre-50:  #FDF3E7;
+  --color-ochre-100: #FBE3C2;
+  --color-ochre-200: #F5C88A;
+  --color-ochre-300: #EEA954;
+  --color-ochre-400: #E8912F;
+  --color-ochre-500: #D97B29;
+  --color-ochre-600: #B8621E;
+  --color-ochre-700: #8F4B18;
+
+  /* Teal */
+  --color-teal-50:  #E8F5F2;
+  --color-teal-500: #1F7A6C;
+  --color-teal-700: #12463D;
+
+  /* Warm gray (replaces default Tailwind gray) */
+  --color-gray-0:   #FFFFFF;
+  --color-gray-50:  #F7F6F4;
+  --color-gray-100: #EFEDE9;
+  --color-gray-200: #E2DFD9;
+  --color-gray-300: #C9C5BC;
+  --color-gray-400: #A6A199;
+  --color-gray-500: #7D786F;
+  --color-gray-600: #5A564F;
+  --color-gray-700: #3D3A35;
+  --color-gray-800: #26241F;
+  --color-gray-900: #161512;
 }
 
+/* ─── Tailwind token → CSS-var bridge (shadcn + fonts) ──────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background:          var(--background);
+  --color-foreground:          var(--foreground);
+  --color-card:                var(--card);
+  --color-card-foreground:     var(--card-foreground);
+  --color-popover:             var(--popover);
+  --color-popover-foreground:  var(--popover-foreground);
+  --color-primary:             var(--primary);
+  --color-primary-foreground:  var(--primary-foreground);
+  --color-secondary:           var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:               var(--muted);
+  --color-muted-foreground:    var(--muted-foreground);
+  --color-accent:              var(--accent);
+  --color-accent-foreground:   var(--accent-foreground);
+  --color-destructive:         var(--destructive);
+  --color-border:              var(--border);
+  --color-input:               var(--input);
+  --color-ring:                var(--ring);
+
+  /* Fonts */
+  --font-sans:    var(--font-sans),    'IBM Plex Sans', system-ui, sans-serif;
+  --font-display: var(--font-display), 'Fraunces',      Georgia,   serif;
+  --font-mono:    var(--font-mono),    'IBM Plex Mono', monospace;
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) * 0.5);   /* 4px  */
+  --radius-md: var(--radius);               /* 8px  */
+  --radius-lg: calc(var(--radius) * 1.5);   /* 12px */
+  --radius-xl: calc(var(--radius) * 2);     /* 16px */
+
+  /* Shadows (navy-tinted) */
+  --shadow-sm: 0 1px 2px rgba(6, 15, 28, 0.06);
+  --shadow-md: 0 4px 8px rgba(6, 15, 28, 0.08), 0 1px 2px rgba(6, 15, 28, 0.06);
+  --shadow-lg: 0 12px 24px rgba(6, 15, 28, 0.10), 0 2px 4px rgba(6, 15, 28, 0.06);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Semantic tokens (brand-mapped) ────────────────────────── */
+:root {
+  --background:            #F7F6F4; /* gray-50 */
+  --foreground:            #26241F; /* gray-800 */
+  --card:                  #FFFFFF;
+  --card-foreground:       #26241F; /* gray-800 */
+  --popover:               #FFFFFF;
+  --popover-foreground:    #26241F;
+  --primary:               #10243E; /* navy-700 */
+  --primary-foreground:    #FFFFFF;
+  --secondary:             #EEF3F8; /* navy-50 */
+  --secondary-foreground:  #10243E; /* navy-700 */
+  --muted:                 #EFEDE9; /* gray-100 */
+  --muted-foreground:      #7D786F; /* gray-500 */
+  --accent:                #FDF3E7; /* ochre-50 */
+  --accent-foreground:     #8F4B18; /* ochre-700 */
+  --destructive:           #C13B3B;
+  --border:                #E2DFD9; /* gray-200 */
+  --input:                 #E2DFD9; /* gray-200 */
+  --ring:                  #2C567F; /* navy-500 */
+  --radius:                0.5rem;  /* 8px */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: #26241F; /* gray-800 */
+    letter-spacing: -0.015em;
+  }
 }
