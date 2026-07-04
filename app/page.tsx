@@ -108,6 +108,17 @@ export default function LandingPage() {
           §1  HERO
       ══════════════════════════════════════════════════════ */}
       <section className="relative bg-navy-800 overflow-hidden min-h-screen flex" aria-label="Hero">
+
+        {/* ── Glowing orbs ── */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+          {/* Ochre — top right */}
+          <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-ochre-500/25 blur-[120px]" />
+          {/* Teal — bottom left */}
+          <div className="absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-teal-500/20 blur-[100px]" />
+          {/* Blue — centre top */}
+          <div className="absolute top-1/4 left-1/3 w-[350px] h-[350px] rounded-full bg-blue-500/10 blur-[90px]" />
+        </div>
+
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8 w-full flex flex-col lg:flex-row items-stretch pt-16">
 
           {/* Left: copy */}
