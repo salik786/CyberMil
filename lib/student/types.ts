@@ -24,6 +24,15 @@ export const AVAILABILITY_LABELS: Record<Availability, string> = {
   internship: 'Internship / Placement',
 }
 
+export type PayPeriod = 'per-hour' | 'per-year' | 'per-week' | 'per-month'
+
+export const PAY_PERIOD_LABELS: Record<PayPeriod, string> = {
+  'per-hour':  'Per hour',
+  'per-year':  'Per year',
+  'per-week':  'Per week',
+  'per-month': 'Per month',
+}
+
 export interface StudentProfile {
   userId: string
 
@@ -43,12 +52,26 @@ export interface StudentProfile {
   resumeUrl: string
   isVisible: boolean
 
+  // ── Job preferences (collected in wizard) ────
+  postcode?: string
+  remoteWork?: boolean
+  minSalary?: string
+  payPeriod?: PayPeriod
+  preferredJobTypes?: string[]
+  desiredTitles?: string[]
+
   // ── Meta ─────────────────────────────────────
   completedOnboarding: boolean
   updatedAt: string
 }
 
-export type OnboardingData = Pick<StudentProfile, 'tafeCampus' | 'course' | 'availability'>
+export type OnboardingData = Pick<StudentProfile,
+  'tafeCampus' | 'course' | 'availability'
+> & Partial<Pick<StudentProfile,
+  'location' | 'postcode' | 'remoteWork' |
+  'minSalary' | 'payPeriod' |
+  'preferredJobTypes' | 'desiredTitles' | 'skills'
+>>
 
 /** Fields that count toward profile completion % */
 export const COMPLETION_FIELDS: Array<{
