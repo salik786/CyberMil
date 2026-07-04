@@ -7,7 +7,7 @@ import {
   ArrowRight, Search, MapPin, ChevronLeft, ChevronRight,
   CheckCircle2, ClipboardList, Users, FileText, UserCheck,
   Zap, HardHat, Cog, Wrench, FlaskConical, Mountain,
-  Star, Building2, Briefcase, TrendingUp, Clock, Eye, BookOpen,
+  Star, Building2, Clock, Eye, BookOpen,
 } from 'lucide-react'
 import { PublicNav } from '@/components/landing/public-nav'
 import { useReveal } from '@/components/landing/use-reveal'
@@ -26,19 +26,12 @@ const LOGOS = [
 ]
 
 const INDUSTRIES = [
-  { label: 'Construction', icon: HardHat,     count: '420+', iconBg: 'bg-orange-100', iconColor: 'text-orange-600', hoverBorder: 'hover:border-orange-200' },
-  { label: 'Electrical',   icon: Zap,          count: '310+', iconBg: 'bg-yellow-100', iconColor: 'text-yellow-600', hoverBorder: 'hover:border-yellow-200' },
-  { label: 'Mechanical',   icon: Cog,          count: '280+', iconBg: 'bg-blue-100',   iconColor: 'text-blue-600',   hoverBorder: 'hover:border-blue-200'   },
-  { label: 'Fabrication',  icon: Wrench,       count: '190+', iconBg: 'bg-purple-100', iconColor: 'text-purple-600', hoverBorder: 'hover:border-purple-200' },
-  { label: 'Engineering',  icon: FlaskConical, count: '240+', iconBg: 'bg-teal-100',   iconColor: 'text-teal-600',   hoverBorder: 'hover:border-teal-200'   },
-  { label: 'Mining',       icon: Mountain,     count: '160+', iconBg: 'bg-red-100',    iconColor: 'text-red-600',    hoverBorder: 'hover:border-red-200'    },
-]
-
-const STATS = [
-  { value: '2,400+', label: 'Graduates placed',      sub: 'Across 12 campuses',      Icon: Users,      iconBg: 'bg-blue-50',   iconColor: 'text-blue-500'   },
-  { value: '500+',   label: 'Verified employers',     sub: 'Actively hiring',          Icon: Building2,  iconBg: 'bg-ochre-50',  iconColor: 'text-ochre-500'  },
-  { value: '89%',    label: 'Placed within 6 months', sub: 'With a complete profile',  Icon: TrendingUp, iconBg: 'bg-green-50',  iconColor: 'text-green-600'  },
-  { value: '1,200+', label: 'Active job listings',    sub: 'Updated daily',            Icon: Briefcase,  iconBg: 'bg-purple-50', iconColor: 'text-purple-600' },
+  { label: 'Construction', icon: HardHat,     count: '420+', cardTop: 'bg-orange-50',  iconBg: 'bg-orange-100', iconColor: 'text-orange-600', hoverBorder: 'hover:border-orange-300' },
+  { label: 'Electrical',   icon: Zap,          count: '310+', cardTop: 'bg-yellow-50',  iconBg: 'bg-yellow-100', iconColor: 'text-yellow-600', hoverBorder: 'hover:border-yellow-300' },
+  { label: 'Mechanical',   icon: Cog,          count: '280+', cardTop: 'bg-blue-50',    iconBg: 'bg-blue-100',   iconColor: 'text-blue-600',   hoverBorder: 'hover:border-blue-300'   },
+  { label: 'Fabrication',  icon: Wrench,       count: '190+', cardTop: 'bg-purple-50',  iconBg: 'bg-purple-100', iconColor: 'text-purple-600', hoverBorder: 'hover:border-purple-300' },
+  { label: 'Engineering',  icon: FlaskConical, count: '240+', cardTop: 'bg-teal-50',    iconBg: 'bg-teal-100',   iconColor: 'text-teal-600',   hoverBorder: 'hover:border-teal-300'   },
+  { label: 'Mining',       icon: Mountain,     count: '160+', cardTop: 'bg-red-50',     iconBg: 'bg-red-100',    iconColor: 'text-red-600',    hoverBorder: 'hover:border-red-300'    },
 ]
 
 const PROFILE_CARDS = [
@@ -49,22 +42,22 @@ const PROFILE_CARDS = [
 ]
 
 const FEATURED_JOBS = [
-  { id: 1, title: 'Electrical Apprentice (Certificate III)', company: 'Ausgrid',          companyInitials: 'AG',  companyBg: 'bg-yellow-500', location: 'Sydney, NSW',    type: 'Apprenticeship', salary: '$18–$24/hr',     daysAgo: 1, hot: true  },
+  { id: 1, title: 'Electrical Apprentice (Certificate III)', company: 'Ausgrid',         companyInitials: 'AG',  companyBg: 'bg-yellow-500', location: 'Sydney, NSW',    type: 'Apprenticeship', salary: '$18–$24/hr',     daysAgo: 1, hot: true  },
   { id: 2, title: 'Site Supervisor – Civil Construction',    company: 'CPB Contractors', companyInitials: 'CPB', companyBg: 'bg-orange-500', location: 'Newcastle, NSW', type: 'Full-time',      salary: '$95k–$115k/yr', daysAgo: 2, hot: false },
   { id: 3, title: 'Graduate Civil Engineer',                 company: 'John Holland',    companyInitials: 'JH',  companyBg: 'bg-red-700',    location: 'Brisbane, QLD',  type: 'Full-time',      salary: '$68k–$78k/yr',  daysAgo: 3, hot: false },
 ]
 
 const JOURNEY_STEPS = [
-  { n: '01', title: 'Create your profile',  desc: 'Tell us about your skills, qualifications and goals.',                   Icon: ClipboardList },
-  { n: '02', title: 'Get matched',          desc: 'We connect you with employers looking for your skills.',                 Icon: Users         },
-  { n: '03', title: 'Show your evidence',   desc: 'Upload certificates, projects and on-the-job experience.',               Icon: FileText      },
-  { n: '04', title: 'Get hired',            desc: 'Apply with confidence and land opportunities that move your career.',    Icon: UserCheck     },
+  { n: '01', title: 'Create your profile',  desc: 'Tell us about your skills, qualifications and goals.',                Icon: ClipboardList },
+  { n: '02', title: 'Get matched',          desc: 'We connect you with employers looking for your skills.',              Icon: Users         },
+  { n: '03', title: 'Show your evidence',   desc: 'Upload certificates, projects and on-the-job experience.',            Icon: FileText      },
+  { n: '04', title: 'Get hired',            desc: 'Apply with confidence and land opportunities that move your career.', Icon: UserCheck     },
 ]
 
 const TESTIMONIALS = [
-  { quote: 'CyberMil helped me showcase my skills beyond a resume. I landed my first role two weeks after my profile went live.',            name: 'Liam R.',   role: 'Electrical Graduate',            initials: 'LR', color: 'bg-navy-600',  stars: 5 },
-  { quote: "We found the right candidate faster because we could see real evidence of their work. It's a complete game changer for hiring.", name: 'Sarah H.',  role: 'HR Manager, BuildTech',          initials: 'SH', color: 'bg-teal-700',  stars: 5 },
-  { quote: 'The platform connects us with motivated graduates who are job-ready. Far better than posting on generic job boards.',            name: 'Mark B.',   role: 'Operations Manager, InfraWorks', initials: 'MB', color: 'bg-ochre-700', stars: 5 },
+  { quote: 'CyberMil helped me showcase my skills beyond a resume. I landed my first role two weeks after my profile went live.',            name: 'Liam R.',  role: 'Electrical Graduate',            initials: 'LR', color: 'bg-navy-600',  stars: 5 },
+  { quote: "We found the right candidate faster because we could see real evidence of their work. It's a complete game changer for hiring.", name: 'Sarah H.', role: 'HR Manager, BuildTech',          initials: 'SH', color: 'bg-teal-700',  stars: 5 },
+  { quote: 'The platform connects us with motivated graduates who are job-ready. Far better than posting on generic job boards.',            name: 'Mark B.',  role: 'Operations Manager, InfraWorks', initials: 'MB', color: 'bg-ochre-700', stars: 5 },
 ]
 
 const BULLET_POINTS = [
@@ -73,12 +66,18 @@ const BULLET_POINTS = [
   { label: 'Real opportunities', desc: 'Find roles that match your skills and career goals.' },
 ]
 
+// Shared dot-grid background — matches the login/register page texture
+const DOT_BG: React.CSSProperties = {
+  backgroundColor: '#F7F6F4',
+  backgroundImage: 'radial-gradient(circle, #C9C5BC 1px, transparent 1px)',
+  backgroundSize: '22px 22px',
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function LandingPage() {
   const [activeDot, setActiveDot] = useState(0)
 
-  const statsRef       = useReveal()
   const industryRef    = useReveal()
   const learningRef    = useReveal()
   const employerRef    = useReveal()
@@ -132,8 +131,34 @@ export default function LandingPage() {
               CyberMil connects TAFE graduates with verified employers who value what you can actually do — not just what a resume says.
             </p>
 
-            {/* Search bar */}
-            <div className="flex flex-col sm:flex-row gap-2 mb-8 max-w-xl">
+            {/* ── Search bar ── */}
+            {/* Mobile: single unified white card (Seek/Indeed pattern) */}
+            <div className="sm:hidden mb-8">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
+                <div className="flex items-center gap-3 px-4 py-4 border-b border-gray-100">
+                  <Search className="size-4 text-gray-400 shrink-0" strokeWidth={1.75} />
+                  <input
+                    type="text"
+                    placeholder="Job title or keyword…"
+                    className="flex-1 bg-transparent text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none"
+                  />
+                </div>
+                <div className="flex items-center gap-3 px-4 py-4">
+                  <MapPin className="size-4 text-gray-400 shrink-0" strokeWidth={1.75} />
+                  <span className="text-sm text-gray-400">Sydney, NSW</span>
+                </div>
+                <div className="p-3 border-t border-gray-100">
+                  <Link
+                    href="/jobs"
+                    className="flex items-center justify-center h-12 rounded-xl bg-ochre-500 hover:bg-ochre-600 text-white font-semibold text-sm transition-colors w-full"
+                  >
+                    Find jobs
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Desktop: horizontal row */}
+            <div className="hidden sm:flex gap-2 mb-8 max-w-xl">
               <div className="flex-1 flex items-center gap-2 h-12 px-4 rounded-xl bg-white border border-transparent">
                 <Search className="size-4 text-gray-400 shrink-0" strokeWidth={1.75} />
                 <input
@@ -249,26 +274,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══ §3  STATS ════════════════════════════════════════════════════ */}
-      <section className="bg-gray-50 py-16 lg:py-20" aria-label="Platform metrics">
-        <div ref={statsRef} className="max-w-[1200px] mx-auto px-6 lg:px-8 reveal">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {STATS.map(({ value, label, sub, Icon, iconBg, iconColor }) => (
-              <div key={label} className="bg-white rounded-2xl border border-gray-100 p-5 lg:p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className={`size-10 rounded-xl ${iconBg} flex items-center justify-center mb-4`}>
-                  <Icon className={`size-5 ${iconColor}`} strokeWidth={1.75} />
-                </div>
-                <p className="font-mono font-bold text-navy-800 text-3xl lg:text-4xl leading-none mb-1">{value}</p>
-                <p className="text-sm font-semibold text-gray-700 mt-2">{label}</p>
-                <p className="text-xs text-gray-400 mt-0.5">{sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ §4  INDUSTRY BROWSE ══════════════════════════════════════════ */}
-      <section className="bg-white py-20 lg:py-24" aria-label="Browse by industry">
+      {/* ══ §3  INDUSTRY BROWSE ══════════════════════════════════════════ */}
+      <section className="py-20 lg:py-24" aria-label="Browse by industry" style={DOT_BG}>
         <div ref={industryRef} className="max-w-[1200px] mx-auto px-6 lg:px-8 reveal">
           <div className="flex items-end justify-between mb-10">
             <div>
@@ -285,19 +292,49 @@ export default function LandingPage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {INDUSTRIES.map(({ label, icon: Icon, count, iconBg, iconColor, hoverBorder }) => (
+          {/* Mobile: horizontal list rows */}
+          <div className="flex flex-col gap-3 sm:hidden">
+            {INDUSTRIES.map(({ label, icon: Icon, count, iconBg, iconColor }) => (
               <Link
                 key={label}
                 href="/jobs"
-                className={`group flex flex-col items-center gap-3 p-5 rounded-2xl border border-gray-100 bg-white hover:shadow-md hover:-translate-y-0.5 transition-all ${hoverBorder}`}
+                className="flex items-center gap-4 bg-white rounded-2xl border border-gray-200/70 p-4 shadow-sm hover:shadow-md hover:border-ochre-200 transition-all group"
               >
-                <div className={`size-12 rounded-xl ${iconBg} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                <div className={`size-12 rounded-xl ${iconBg} flex items-center justify-center shrink-0`}>
                   <Icon className={`size-6 ${iconColor}`} strokeWidth={1.75} />
                 </div>
-                <div className="text-center">
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-gray-800">{label}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{count} open roles</p>
+                </div>
+                <ArrowRight className="size-4 text-gray-300 group-hover:text-ochre-500 transition-colors shrink-0" />
+              </Link>
+            ))}
+            <div className="flex justify-center mt-2">
+              <Link href="/jobs" className="inline-flex items-center gap-2 h-10 px-5 rounded-xl bg-white border border-gray-200 text-sm font-semibold text-gray-700 hover:border-gray-300 hover:shadow-sm transition-all">
+                View all industries <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Desktop: cards with coloured top strip + icon */}
+          <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {INDUSTRIES.map(({ label, icon: Icon, count, cardTop, iconBg, iconColor, hoverBorder }) => (
+              <Link
+                key={label}
+                href="/jobs"
+                className={`group flex flex-col rounded-2xl border border-gray-200/70 bg-white overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all ${hoverBorder}`}
+              >
+                {/* Coloured top */}
+                <div className={`${cardTop} flex items-center justify-center py-7`}>
+                  <div className={`size-14 rounded-2xl ${iconBg} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                    <Icon className={`size-7 ${iconColor}`} strokeWidth={1.75} />
+                  </div>
+                </div>
+                {/* White bottom */}
+                <div className="flex flex-col items-center text-center px-3 py-4">
                   <p className="text-sm font-semibold text-gray-800 leading-tight">{label}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">{count} jobs</p>
+                  <p className="text-xs text-gray-400 mt-1">{count} jobs</p>
                 </div>
               </Link>
             ))}
@@ -305,7 +342,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══ §5  LEARNING TO EARNING ══════════════════════════════════════ */}
+      {/* ══ §4  LEARNING TO EARNING ══════════════════════════════════════ */}
       <section className="bg-gray-50 py-20 lg:py-28 overflow-hidden" aria-label="Value proposition">
         <div
           ref={learningRef}
@@ -379,7 +416,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══ §6  EMPLOYER SECTION ═════════════════════════════════════════ */}
+      {/* ══ §5  EMPLOYER SECTION ═════════════════════════════════════════ */}
       <section className="bg-navy-800 py-20 lg:py-28" aria-label="For employers">
         <div
           ref={employerRef}
@@ -455,7 +492,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══ §7  FEATURED JOBS ════════════════════════════════════════════ */}
+      {/* ══ §6  FEATURED JOBS ════════════════════════════════════════════ */}
       <section className="bg-white py-20 lg:py-24" aria-label="Featured jobs">
         <div ref={jobsRef} className="max-w-[1200px] mx-auto px-6 lg:px-8 reveal">
           <div className="flex items-end justify-between mb-10">
@@ -516,8 +553,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══ §8  HOW IT WORKS ═════════════════════════════════════════════ */}
-      <section id="how-it-works" className="bg-gray-50 py-20 lg:py-28" aria-label="How it works">
+      {/* ══ §7  HOW IT WORKS ═════════════════════════════════════════════ */}
+      <section id="how-it-works" className="py-20 lg:py-28" aria-label="How it works" style={DOT_BG}>
         <div ref={journeyRef} className="max-w-[1200px] mx-auto px-6 lg:px-8 reveal">
           <div className="text-center mb-14">
             <p className="text-ochre-500 text-xs font-semibold uppercase tracking-[0.14em] mb-3">How it works</p>
@@ -551,7 +588,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══ §9  TESTIMONIALS ═════════════════════════════════════════════ */}
+      {/* ══ §8  TESTIMONIALS ═════════════════════════════════════════════ */}
       <section className="bg-white py-20 lg:py-28" aria-label="Testimonials">
         <div ref={testimonialRef} className="max-w-[1200px] mx-auto px-6 lg:px-8 reveal">
           <div className="flex items-end justify-between mb-12">
@@ -609,8 +646,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══ §10  DUAL CTA ════════════════════════════════════════════════ */}
-      <section className="bg-gray-50 py-20 lg:py-24" aria-label="Get started">
+      {/* ══ §9  DUAL CTA ════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-24" aria-label="Get started" style={DOT_BG}>
         <div ref={ctaRef} className="max-w-[1200px] mx-auto px-6 lg:px-8 reveal">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
